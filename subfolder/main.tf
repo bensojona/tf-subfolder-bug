@@ -1,4 +1,3 @@
-# test 4
 variable "name" { default = "sub-folder-test" }
 variable "region" { default = "us-east-1" }
 variable "atlas_environment" { default = "sub-folder-test" }
@@ -21,7 +20,7 @@ module "networking-one" {
 }
 
 module "networking-two" {
-  source = "../networking"
+  source = "github.com/bensojona/tf-subfolder-bug/networking"
 
   cidr = "${var.cidr}"
   name = "${var.name}-two"
