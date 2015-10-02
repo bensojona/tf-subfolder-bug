@@ -1,4 +1,4 @@
-# test 3
+# test 4
 variable "name" { default = "main-folder-test" }
 variable "region" { default = "us-east-1" }
 variable "atlas_environment" { default = "main-folder-test" }
