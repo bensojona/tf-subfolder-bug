@@ -1,6 +1,6 @@
-variable "name" { default = "main-folder-test" }
+variable "name" { default = "sub-folder-test" }
 variable "region" { default = "us-east-1" }
-variable "atlas_environment" { default = "main-folder-test" }
+variable "atlas_environment" { default = "sub-folder-test" }
 variable "atlas_username" { default = "jb_hashicorp" }
 variable "cidr" { default = "10.139.0.0/16" }
 
@@ -20,10 +20,9 @@ resource "aws_vpc" "vpc" {
   tags { Name = "${var.name}" }
 }
 
-resource "aws_security_group" "consul" {
+resource "aws_security_group" "sg" {
   name        = "${var.name}"
   vpc_id      = "${aws_vpc.vpc.id}"
-  description = "Security group for Consul"
 
   tags { Name = "${var.name}" }
 

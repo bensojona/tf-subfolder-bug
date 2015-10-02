@@ -20,10 +20,9 @@ resource "aws_vpc" "vpc" {
   tags { Name = "${var.name}" }
 }
 
-resource "aws_security_group" "consul" {
+resource "aws_security_group" "sg" {
   name        = "${var.name}"
   vpc_id      = "${aws_vpc.vpc.id}"
-  description = "Security group for Consul"
 
   tags { Name = "${var.name}" }
 
