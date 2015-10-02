@@ -13,9 +13,16 @@ atlas {
   name = "${var.atlas_username}/${var.atlas_environment}"
 }
 
-module "networking" {
+module "networking-one" {
   source = "networking"
 
   cidr = "${var.cidr}"
-  name = "${var.name}"
+  name = "${var.name}-one"
+}
+
+module "networking-two" {
+  source = "../networking"
+
+  cidr = "${var.cidr}"
+  name = "${var.name}-two"
 }
