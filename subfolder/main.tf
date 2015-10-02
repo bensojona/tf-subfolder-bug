@@ -20,7 +20,8 @@ module "networking-one" {
 }
 
 module "networking-two" {
-  source = "github.com/bensojona/tf-subfolder-bug/networking"
+  # source = "../networking" # Relative path doesn't work with Atlas/GitHub integration
+  source = "github.com/bensojona/tf-subfolder-bug/networking" # Works with Atlas/GitHub integration
 
   cidr = "${var.cidr}"
   name = "${var.name}-two"
